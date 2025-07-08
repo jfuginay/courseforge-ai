@@ -106,33 +106,107 @@ cat COURSEFORGE_TEAM_ASSIGNMENTS.md
 - Git
 - Google Cloud account (for Gemini API)
 - Supabase account
+- **Claude CLI** (for AI-powered development)
+
+### 🤖 Claude CLI Setup (HIGHLY RECOMMENDED)
+
+**Why use Claude CLI?**
+- Get instant AI assistance while coding
+- Auto-manage tasks with intelligent suggestions
+- Real-time problem solving and debugging
+- Smart code generation and refactoring
+
+**Installation:**
+```bash
+# Install Claude CLI globally
+npm install -g @anthropic-ai/claude-code
+
+# Or using curl (macOS/Linux)
+curl -fsSL https://claude.ai/install.sh | sh
+
+# Verify installation
+claude --version
+```
+
+**Getting Started with Claude CLI:**
+```bash
+# Login to Claude
+claude login
+
+# Start interactive session in your project
+cd courseforge-ai
+claude
+
+# Or run specific commands
+claude "help me implement the Gemini API integration"
+claude "review my React component for bugs"
+claude "optimize this database query"
+```
+
+**Pro Tips for Team:**
+- **Use `claude` in your project directory** for context-aware assistance
+- **Ask for code reviews**: "claude review my-component.tsx"
+- **Get implementation help**: "claude implement user authentication"
+- **Debug issues**: "claude debug this error: [paste error]"
+- **Task management**: "claude add task: implement video player"
 
 ### Development Setup
 ```bash
 # 1. Clone and install
-git clone <repo-url>
+git clone https://github.com/jfuginay/courseforge-ai.git
 cd courseforge-ai
 npm install
 
-# 2. Environment setup
+# 2. Set up Claude CLI (recommended)
+claude login
+claude  # Start interactive session
+
+# 3. Environment setup
 cp .env.example .env
 # Add your API keys:
 # GEMINI_API_KEY=your_key_here
 # SUPABASE_URL=your_url_here
 # SUPABASE_ANON_KEY=your_key_here
 
-# 3. Check your tasks
+# 4. Check your tasks
 npm run task:list
 
-# 4. Start development
+# 5. Start development (with Claude assistance)
 npm run dev
 ```
 
-### Daily Workflow
-1. **Morning Standup**: Check task progress, blockers
-2. **Update Tasks**: Mark completed work
-3. **Sync Progress**: Share demos and integration points
-4. **End of Day**: Push code, update team on progress
+### 🎯 Claude CLI Workflow for CourseForge
+
+**Daily Development Pattern:**
+```bash
+# Morning: Check tasks with AI assistance
+claude "show me my high priority tasks for today"
+
+# During development: Get instant help
+claude "help me implement video processing with Gemini API"
+
+# Code review: Get feedback
+claude "review this quiz generation function"
+
+# Debugging: Solve issues quickly
+claude "this API call is failing, help me debug"
+
+# End of day: Update progress
+claude "mark my completed tasks and plan tomorrow's work"
+```
+
+**Team Collaboration:**
+- **Share Claude conversations** in team chat for complex solutions
+- **Use Claude for pair programming** during video calls
+- **Get consistent code style** by asking Claude to format code
+- **Documentation generation**: "claude create documentation for this API"
+
+### Daily Workflow (with Claude CLI)
+1. **Morning Standup**: `claude "show me today's priorities and blockers"`
+2. **Development**: `claude` for real-time assistance while coding
+3. **Code Review**: `claude "review my changes before pushing"`
+4. **Update Tasks**: `npm run task:complete <id>` + `claude "plan tomorrow's work"`
+5. **End of Day**: Push code, share Claude conversations with team
 
 ## 📅 Week 1 Sprint Schedule
 
@@ -177,10 +251,21 @@ npm run dev
 
 ## 📞 Support & Communication
 
-- **Daily Standups**: 9 AM (15 minutes)
-- **Blockers**: Immediate team notification
-- **Task Updates**: Use Task Master system
-- **Documentation**: Update this README with discoveries
+- **Daily Standups**: 9 AM (15 minutes) - Use Claude to prep talking points
+- **Blockers**: Immediate team notification + `claude "help me solve this blocker"`
+- **Task Updates**: Use Task Master system (`npm run task:complete <id>`)
+- **Code Help**: `claude` for instant AI assistance
+- **Documentation**: Update this README with discoveries (`claude "document this feature"`)
+
+### 🤖 Claude CLI Support Commands
+```bash
+# Get help with CourseForge-specific issues
+claude "help me implement Gemini video processing"
+claude "debug this React component error"
+claude "optimize this Supabase query"
+claude "create unit tests for this function"
+claude "refactor this code to be more maintainable"
+```
 
 ---
 
