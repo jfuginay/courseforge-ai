@@ -1,0 +1,30 @@
+{
+  "name": "courseforge-ai",
+  "version": "1.0.0",
+  "description": "Transform any YouTube video into a complete, interactive course with AI-generated quizzes and progress tracking.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "task": "node task-master.js",
+    "task:add": "node task-master.js add",
+    "task:list": "node task-master.js list",
+    "task:complete": "node task-master.js complete",
+    "task:sync": "node task-master.js sync",
+    "monitor:scan": "node task-monitor.js scan",
+    "monitor:watch": "node task-monitor.js watch",
+    "monitor:hook": "node task-monitor.js hook",
+    "monitor:import": "node scripts/import-tasks.js",
+    "install-hooks": "git config core.hooksPath .githooks"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.50.3",
+    "claude-task-master": "^1.6.4",
+    "dotenv": "^17.0.1"
+  }
+}
