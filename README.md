@@ -2,22 +2,17 @@
 
 **Transform any YouTube video into a complete, interactive course with AI-generated quizzes and progress tracking.**
 
-## 🚀 Quick Start for Team
+## 🚀 Live Demo
 
-```bash
-# Clone the repository
-git clone https://github.com/jfuginay/courseforge-ai.git
-cd courseforge-ai
+**URL**: [Coming Soon - Deploy to Vercel]
 
-# Install task management
-npm install
-
-# View project tasks
-npm run task:list
-
-# See your assignments
-cat COURSEFORGE_TEAM_ASSIGNMENTS.md
-```
+### Current Features ✅
+- ✅ **YouTube URL Input** - Enter any YouTube video URL
+- ✅ **Gemini AI Integration** - Processes videos and generates course content
+- ✅ **Course Structure Generation** - Auto-creates segments with timestamps
+- ✅ **Interactive Quizzes** - Multiple choice questions with explanations
+- ✅ **Beautiful UI** - ShadCN components with Tailwind CSS
+- ✅ **Responsive Design** - Works on desktop and mobile
 
 ## 🎯 MVP Goal (1 Week)
 
@@ -32,81 +27,32 @@ cat COURSEFORGE_TEAM_ASSIGNMENTS.md
 4. System creates public course page
 5. Students watch video + take quizzes with progress tracking
 
-## 📋 Project Documents
-
-### 📊 Planning & Strategy
-- **[Project Plan](./COURSEFORGE_PROJECT_PLAN.md)** - Complete project overview, architecture, and roadmap
-- **[Updated Plan with Progress](./COURSEFORGE_UPDATED_PLAN.md)** - Integration of team research and MVP definition
-- **[Team Assignments](./COURSEFORGE_TEAM_ASSIGNMENTS.md)** - Who does what, daily goals, critical path
-
-### 🔧 Task Management
-- **View tasks**: `npm run task:list`
-- **Complete task**: `npm run task:complete <id>`
-- **Add new task**: `npm run task:add "Task description"`
-
-## 👥 Team Roles & Critical Tasks
-
-### 🤖 AI/Backend Engineer
-**Critical Path Tasks:**
-- Gemini API integration for video processing
-- YouTube transcript extraction pipeline  
-- Automated quiz generation system
-
-### 🎨 Frontend Engineer (Course Creation)
-**Critical Path Tasks:**
-- NextJS + ShadCN + React setup
-- Course creation screen with accept/reject UI
-- Multiple quiz type interfaces
-
-### 📱 Frontend Engineer (Student Experience)  
-**Critical Path Tasks:**
-- Public course consumption page
-- Video player with quiz integration
-- Student progress tracking UI
-
-### 🗄️ Product Manager + Infrastructure
-**Critical Path Tasks:**
-- Database implementation (Supabase)
-- API endpoints and authentication
-- Deployment pipeline and demo coordination
-
-## 🛠️ Tech Stack
-
-### Core Technologies
-- **Frontend**: React + NextJS + ShadCN UI
-- **Backend**: Supabase (PostgreSQL + Auth)
-- **AI Processing**: Google Gemini API
-- **Video Processing**: Gemini video analysis
-- **Deployment**: Vercel/Netlify
-
-### Why These Choices
-- **Gemini**: Can process videos directly, extract timestamps, generate questions
-- **NextJS**: Fast setup for web-based course creation with shareable pages
-- **Supabase**: Rapid backend development with real-time features
-- **ShadCN**: Beautiful, accessible UI components
-
-## 🎯 Success Metrics
-
-### MVP Week 1
-- ✅ Process 10-minute video in <2 minutes
-- ✅ 80% of auto-generated questions accepted by creators
-- ✅ End-to-end flow: YouTube URL → Public course link
-- ✅ Demo with real YouTube video
-
-### Growth Targets
-- 100 courses created in first month
-- 70% student completion rate
-- 5 different quiz types supported
-- Mobile-responsive course consumption
-
-## 🚀 Getting Started
+## 🚀 Quick Start
 
 ### Prerequisites
-- Node.js 18+
+- Node.js 20+
 - Git
-- Google Cloud account (for Gemini API)
-- Supabase account
-- **Claude CLI** (for AI-powered development)
+- Google AI API key (for Gemini)
+
+### Installation
+```bash
+# Clone the repository
+git clone https://github.com/jfuginay/courseforge-ai.git
+cd courseforge-ai
+
+# Install dependencies
+npm install
+
+# Set up environment variables
+cp .env.example .env
+# Add your Google AI API key to .env:
+# GOOGLE_AI_API_KEY=your_api_key_here
+
+# Run development server
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) to see the application.
 
 ### 🤖 Claude CLI Setup (HIGHLY RECOMMENDED)
 
@@ -121,154 +67,209 @@ cat COURSEFORGE_TEAM_ASSIGNMENTS.md
 # Install Claude CLI globally
 npm install -g @anthropic-ai/claude-code
 
-# Or using curl (macOS/Linux)
-curl -fsSL https://claude.ai/install.sh | sh
-
-# Verify installation
-claude --version
-```
-
-**Getting Started with Claude CLI:**
-```bash
 # Login to Claude
 claude login
 
 # Start interactive session in your project
 cd courseforge-ai
 claude
-
-# Or run specific commands
-claude "help me implement the Gemini API integration"
-claude "review my React component for bugs"
-claude "optimize this database query"
 ```
 
-**Pro Tips for Team:**
-- **Use `claude` in your project directory** for context-aware assistance
-- **Ask for code reviews**: "claude review my-component.tsx"
-- **Get implementation help**: "claude implement user authentication"
-- **Debug issues**: "claude debug this error: [paste error]"
-- **Task management**: "claude add task: implement video player"
+## 🛠️ Tech Stack
 
-### Development Setup
+### Frontend
+- **Next.js 14** - React framework with Pages Router
+- **TypeScript** - Type safety
+- **Tailwind CSS** - Utility-first CSS
+- **ShadCN UI** - Beautiful, accessible components
+- **Framer Motion** - Smooth animations
+- **Lucide React** - Icon library
+
+### Backend
+- **Next.js API Routes** - Backend API endpoints
+- **Google Gemini AI** - Video processing and question generation
+- **Vercel** - Deployment and hosting
+
+### Development
+- **Task Master** - Intelligent task management
+- **Claude CLI** - AI-powered development assistance
+- **GitHub Issues** - Project tracking
+
+## 📁 Project Structure
+
+```
+courseforge-ai/
+├── src/
+│   ├── components/          # Reusable UI components
+│   │   ├── ui/             # ShadCN components
+│   │   └── Header.tsx      # Navigation header
+│   ├── pages/              # Next.js pages
+│   │   ├── api/            # API routes
+│   │   │   └── analyze-video.ts
+│   │   ├── _app.tsx        # App configuration
+│   │   └── index.tsx       # Home page
+│   ├── lib/                # Utility libraries
+│   │   ├── gemini.ts       # Gemini AI integration
+│   │   └── utils.ts        # Helper functions
+│   ├── hooks/              # Custom React hooks
+│   └── styles/             # Global styles
+├── public/                 # Static assets
+├── task-master.js          # Task management system
+├── tasks.json              # Task storage
+└── README.md              # This file
+```
+
+## 🔧 API Endpoints
+
+### POST /api/analyze-video
+Analyzes a YouTube video and generates course content.
+
+**Request:**
+```json
+{
+  "youtubeUrl": "https://www.youtube.com/watch?v=..."
+}
+```
+
+**Response:**
+```json
+{
+  "success": true,
+  "data": {
+    "title": "Course Title",
+    "description": "Course description",
+    "duration": "30 minutes",
+    "segments": [
+      {
+        "title": "Introduction",
+        "timestamp": "00:00",
+        "concepts": ["concept1", "concept2"],
+        "questions": [
+          {
+            "type": "multiple_choice",
+            "question": "What is...?",
+            "options": ["A", "B", "C", "D"],
+            "correct": 0,
+            "explanation": "A is correct because..."
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+## 📋 Task Management
+
+### View Current Tasks
 ```bash
-# 1. Clone and install
-git clone https://github.com/jfuginay/courseforge-ai.git
-cd courseforge-ai
-npm install
-
-# 2. Set up Claude CLI (recommended)
-claude login
-claude  # Start interactive session
-
-# 3. Environment setup
-cp .env.example .env
-# Add your API keys:
-# GEMINI_API_KEY=your_key_here
-# SUPABASE_URL=your_url_here
-# SUPABASE_ANON_KEY=your_key_here
-
-# 4. Check your tasks
 npm run task:list
-
-# 5. Start development (with Claude assistance)
-npm run dev
 ```
 
-### 🎯 Claude CLI Workflow for CourseForge
-
-**Daily Development Pattern:**
+### Add New Task
 ```bash
-# Morning: Check tasks with AI assistance
-claude "show me my high priority tasks for today"
-
-# During development: Get instant help
-claude "help me implement video processing with Gemini API"
-
-# Code review: Get feedback
-claude "review this quiz generation function"
-
-# Debugging: Solve issues quickly
-claude "this API call is failing, help me debug"
-
-# End of day: Update progress
-claude "mark my completed tasks and plan tomorrow's work"
+npm run task:add "Task description"
 ```
 
-**Team Collaboration:**
-- **Share Claude conversations** in team chat for complex solutions
-- **Use Claude for pair programming** during video calls
-- **Get consistent code style** by asking Claude to format code
-- **Documentation generation**: "claude create documentation for this API"
+### Complete Task
+```bash
+npm run task:complete <task-id>
+```
 
-### Daily Workflow (with Claude CLI)
-1. **Morning Standup**: `claude "show me today's priorities and blockers"`
-2. **Development**: `claude` for real-time assistance while coding
-3. **Code Review**: `claude "review my changes before pushing"`
-4. **Update Tasks**: `npm run task:complete <id>` + `claude "plan tomorrow's work"`
-5. **End of Day**: Push code, share Claude conversations with team
+### Current Status
+- ✅ **Tech Stack Setup** - NextJS + ShadCN + Gemini API
+- ✅ **Course Creation UI** - YouTube URL input and course generation
+- ✅ **Gemini Integration** - Video analysis and question generation
+- 🔄 **Public Course Pages** - In development
+- 📋 **Question Accept/Reject** - Planned
+- 📋 **Progress Tracking** - Planned
 
-## 📅 Week 1 Sprint Schedule
+## 🎬 Demo Flow
 
-### Day 1 (Monday): Foundation
-- Dev environment setup
-- Gemini API integration test
-- NextJS project initialization
+1. **Visit Home Page** - Clean interface with YouTube URL input
+2. **Enter YouTube URL** - Paste any educational video URL
+3. **AI Processing** - Gemini analyzes video and generates course
+4. **Course Preview** - Review generated segments and questions
+5. **Interactive Learning** - Take quizzes based on video content
 
-### Day 2 (Tuesday): Core Processing  
-- YouTube video processing working
-- Database schema implemented
-- First question generation
+## 🚀 Deployment
 
-### Day 3 (Wednesday): Creation UI
-- Course creation screen functional
-- Accept/reject questions interface
-- API endpoints connected
+### Vercel Deployment
+```bash
+# Deploy to Vercel
+vercel
 
-### Day 4 (Thursday): Consumption UI
-- Public course page working
-- Video player + quiz integration
-- End-to-end flow testing
+# Set environment variables in Vercel dashboard:
+# GOOGLE_AI_API_KEY=your_api_key_here
+```
 
-### Day 5 (Friday): Polish & Demo
-- Bug fixes and UX improvements
-- Demo video recording
-- MVP launch preparation
+### Environment Variables
+- `GOOGLE_AI_API_KEY` - Google AI API key for Gemini
+- `NEXTAUTH_SECRET` - NextAuth secret (if using authentication)
+- `NEXTAUTH_URL` - Application URL for authentication
 
-## 🎬 Demo Content
+## 🎯 Success Metrics
 
-**Primary**: "3Blue1Brown - Dot Products and Duality" (math, visual, clear concepts)  
-**Secondary**: "Prompt Engineering Basics" (tech, practical)  
-**Fallback**: "Excel VLOOKUP Tutorial" (business, step-by-step)
+### MVP Week 1
+- ✅ Process 10-minute video in <2 minutes
+- ✅ Generate 5-8 course segments with questions
+- ✅ Beautiful, responsive UI
+- ✅ Working demo ready for presentation
 
-## 🏆 Competitive Advantages
-
-1. **AI-First Course Creation**: Gemini processes everything
-2. **Creator Collaboration**: Accept/reject AI suggestions
-3. **Rapid Deployment**: YouTube URL → Course in minutes
-4. **Multiple Learning Paths**: Non-linear knowledge graphs
-5. **Real-time Progress**: Live student analytics
+### Growth Targets
+- 100 courses created in first month
+- 70% student completion rate
+- 5 different quiz types supported
+- Mobile-responsive course consumption
 
 ## 📞 Support & Communication
 
-- **Daily Standups**: 9 AM (15 minutes) - Use Claude to prep talking points
-- **Blockers**: Immediate team notification + `claude "help me solve this blocker"`
-- **Task Updates**: Use Task Master system (`npm run task:complete <id>`)
-- **Code Help**: `claude` for instant AI assistance
-- **Documentation**: Update this README with discoveries (`claude "document this feature"`)
+- **GitHub Issues**: [CourseForge AI Issues](https://github.com/jfuginay/courseforge-ai/issues)
+- **Task Management**: `npm run task:list`
+- **Claude CLI**: `claude` for AI assistance
+- **Documentation**: This README + inline code comments
 
 ### 🤖 Claude CLI Support Commands
 ```bash
 # Get help with CourseForge-specific issues
-claude "help me implement Gemini video processing"
-claude "debug this React component error"
-claude "optimize this Supabase query"
+claude "help me implement YouTube video embedding"
+claude "debug this Gemini API error"
+claude "optimize this React component"
 claude "create unit tests for this function"
 claude "refactor this code to be more maintainable"
 ```
+
+## 🏆 Competitive Advantages
+
+1. **AI-First Course Creation**: Gemini processes everything
+2. **Instant Course Generation**: YouTube URL → Course in <2 minutes
+3. **Beautiful UI**: ShadCN components with smooth animations
+4. **Developer-Friendly**: Claude CLI integration for team productivity
+5. **Open Source Ready**: Clean architecture for community contributions
+
+## 📈 Roadmap
+
+### Week 1 (Current)
+- [x] NextJS + ShadCN setup
+- [x] Gemini AI integration
+- [x] Course generation from YouTube URLs
+- [x] Interactive quiz components
+- [ ] Public course consumption pages
+
+### Week 2 (Next)
+- [ ] Course creator accept/reject flow
+- [ ] Student progress tracking
+- [ ] Multiple quiz types
+- [ ] Mobile optimization
+
+### Week 3 (Future)
+- [ ] User authentication
+- [ ] Course management dashboard
+- [ ] Advanced analytics
+- [ ] Social sharing features
 
 ---
 
 **Let's build the future of online education! 🚀**
 
-*Generated with CourseForge AI Task Management System*
+*Built with Next.js, Gemini AI, and Claude CLI*
